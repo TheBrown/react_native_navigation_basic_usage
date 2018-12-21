@@ -4,9 +4,14 @@ import { View, Text, Button } from "react-native";
 import { NavigationActions, StackActions } from "react-navigation";
 
 export default class DetailScreen extends Component {
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    const { params } = navigation.state;
     return {
-      title: navigation.getParam("otherParam", "No Param Passing!")
+      title: params ? params.otherParam : "No Param Passing!",
+      headerStyle: {
+        backgroundColor: navigationOptions.headerTintColor,
+      },
+      headerTintColor: navigationOptions.headerStyle.backgroundColor
     };
   };
 

@@ -54,7 +54,7 @@ class HomScreen extends Component {
             onPress={() => {
               this.props.navigation.navigate('Details', {
                 itemId: 16, 
-                otherParam: 'My secret key'
+                otherParam: 'My secret key params!'
               })
             }}
           />
