@@ -13,11 +13,21 @@ class HomScreen extends Component {
     );
   };
 
+  gotoDetailScreen1 = () => {
+      this.props.navigation.navigate('Details');
+  }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View style={{  alignItems: "center", justifyContent: "center", flex: 1 }}>
+        <View style={{flex: 1}}>
         <Text> Hello From Home Screen!! </Text>
-        <Button title="Go to Detail Screen" onPress={this.gotoDetailScreen} />
+        </View>
+        <View style={{flex: 1}}>
+        <Button title="Go to Detail Screen by Change initialRoute" onPress={this.gotoDetailScreen}/>
+        </View>
+        <View style={{flex:1}}>
+        <Button title="Go to Detail by push another stack screen" onPress={this.gotoDetailScreen1}/>
+        </View>
       </View>
     );
   }
