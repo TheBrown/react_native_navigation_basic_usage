@@ -6,7 +6,15 @@ import { NavigationActions, StackActions } from "react-navigation";
 class HomScreen extends Component {
   
   static navigationOptions = {
-    title: 'Home'
+    title: 'Home', 
+    // headerStyle: {
+    //   backgroundColor: "#f4511e"
+    // },
+    // headerTintColot: "#fff",
+    // headerTitleStyle: {
+    //   fontWeight: 'bold',
+    // }
+
   }
 
   gotoDetailScreen = () => {

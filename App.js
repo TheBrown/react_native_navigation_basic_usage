@@ -6,21 +6,32 @@
  * @flow
  */
 
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-import HomeScreen from './src/screens/HomScreen';
-import DetailScreen from './src/screens/DetailScreen';
+import HomeScreen from "./src/screens/HomScreen";
+import DetailScreen from "./src/screens/DetailScreen";
 
-const AppContainer = createStackNavigator({
-  Home: {
-    screen: HomeScreen
+const AppContainer = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen
+    },
+    Details: {
+      screen: DetailScreen
+    }
   },
-  Details: {
-    screen: DetailScreen
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#f4511e"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    }
   }
-}, 
-{
-  initialRouteName: 'Home'
-})
+);
 
 export default createAppContainer(AppContainer);
