@@ -3,10 +3,13 @@ import { Text, View, Button } from "react-native";
 
 import { NavigationActions, StackActions } from "react-navigation";
 
+import LogoTitle from './LogoTitle';
+
 class HomScreen extends Component {
   
   static navigationOptions = {
-    title: 'Home', 
+    // title: 'Home', 
+    headerTitle: <LogoTitle/>
     // headerStyle: {
     //   backgroundColor: "#f4511e"
     // },
