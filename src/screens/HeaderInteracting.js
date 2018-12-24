@@ -43,6 +43,10 @@ class HeaderInteracting extends Component {
       <View style={{ alignItems: "center", justifyContent: "center", flex: 1 }}>
         <Text>Header Interacting Screen</Text>
         <Text>Count: {this.state.count}</Text>
+        <Button
+        onPress={()=>this.setState({count: 0})}
+        title="reset"
+        />
       </View>
     );
   }

@@ -25,13 +25,6 @@ class HomScreen extends Component {
         </TouchableOpacity>
       </View>
     )
-    // headerStyle: {
-    //   backgroundColor: "#f4511e"
-    // },
-    // headerTintColot: "#fff",
-    // headerTitleStyle: {
-    //   fontWeight: 'bold',
-    // }
   };
 
   gotoDetailScreen = () => {
@@ -84,6 +77,14 @@ class HomScreen extends Component {
               this.props.navigation.navigate("HeaderInteracting");
             }}
           />
+        </View>
+
+        <View style={{flex: 1}}>
+            <Text>Open FullScreen Modal</Text>
+            <Button
+              title="Test Modal"
+              onPress={()=>this.props.navigation.navigate('MyModal')}
+            />
         </View>
       </View>
     );
