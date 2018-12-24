@@ -86,6 +86,13 @@ class HomScreen extends Component {
               onPress={()=>this.props.navigation.navigate('MyModal')}
             />
         </View>
+        <View style={{flex:1}}>
+          <Text>Open Drawer Navigator</Text>
+          <Button
+          title="Open Drawer"
+          onPress={()=>this.props.navigation.toggleDrawer()}
+          />
+        </View>
       </View>
     );
   }

@@ -6,7 +6,7 @@
  * @flow
  */
 
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createAppContainer, createDrawerNavigator } from "react-navigation";
 
 import HomeScreen from "./src/screens/HomScreen";
 import DetailScreen from "./src/screens/DetailScreen";
@@ -42,4 +42,31 @@ const AppContainer = createStackNavigator(
   }
 );
 
-export default createAppContainer(AppContainer);
+const AppDrawerContainer = createDrawerNavigator(
+  {
+    Home: {
+      screen: HomeScreen
+    },
+    Details: {
+      screen: DetailScreen
+    },
+    HeaderInteracting: {
+      screen: HeaderInteracting
+    },
+    MyModal: {
+      screen: MyModal
+    }
+  },
+  {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#f4511e"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    }
+  }
+);
+export default createAppContainer(AppDrawerContainer);
