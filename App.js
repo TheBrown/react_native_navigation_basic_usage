@@ -10,6 +10,7 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 
 import HomeScreen from "./src/screens/HomScreen";
 import DetailScreen from "./src/screens/DetailScreen";
+import HeaderInteracting from './src/screens/HeaderInteracting';
 
 const AppContainer = createStackNavigator(
   {
@@ -18,6 +19,9 @@ const AppContainer = createStackNavigator(
     },
     Details: {
       screen: DetailScreen
+    },
+    HeaderInteracting: {
+      screen: HeaderInteracting
     }
   },
   {

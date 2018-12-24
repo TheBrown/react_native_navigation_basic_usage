@@ -1,15 +1,30 @@
 import React, { Component } from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View, Button, TouchableOpacity } from "react-native";
 
 import { NavigationActions, StackActions } from "react-navigation";
 
-import LogoTitle from './LogoTitle';
+import LogoTitle from "./LogoTitle";
 
 class HomScreen extends Component {
-  
   static navigationOptions = {
-    // title: 'Home', 
-    headerTitle: <LogoTitle/>
+    // title: 'Home',
+    headerTitle: <LogoTitle />,
+    headerRight: (
+      <View style={{ margin: 10 }}>
+        <TouchableOpacity
+          style={{
+            alignItems: "center",
+            backgroundColor: "#fff100",
+            padding: 10
+          }}
+          onPress={() => {
+            alert("This is a Fake Button!");
+          }}
+        >
+          <Text> Info </Text>
+        </TouchableOpacity>
+      </View>
+    )
     // headerStyle: {
     //   backgroundColor: "#f4511e"
     // },
@@ -17,8 +32,7 @@ class HomScreen extends Component {
     // headerTitleStyle: {
     //   fontWeight: 'bold',
     // }
-
-  }
+  };
 
   gotoDetailScreen = () => {
     this.props.navigation.dispatch(
@@ -50,15 +64,24 @@ class HomScreen extends Component {
             onPress={this.gotoDetailScreen1}
           />
         </View>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <Text>Passing Parameters to routes</Text>
           <Button
             title="Go to Details"
             onPress={() => {
-              this.props.navigation.navigate('Details', {
-                itemId: 16, 
-                otherParam: 'My secret key params!'
-              })
+              this.props.navigation.navigate("Details", {
+                itemId: 16,
+                otherParam: "My secret key params!"
+              });
+            }}
+          />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text>Header Interacting with component instance V3</Text>
+          <Button
+            title="Go to Header Interacting"
+            onPress={() => {
+              this.props.navigation.navigate("HeaderInteracting");
             }}
           />
         </View>
